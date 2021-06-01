@@ -13,6 +13,8 @@ void cDijkstra::build(cBotBase& bot) {
 			InPath[i][j] = false;
 		}
 	}
+	coordslist[0].clear();
+	coordslist[1].clear();
 	bool pnf = true;
 	while (pnf) {
 		bool first = true;
@@ -34,7 +36,6 @@ void cDijkstra::build(cBotBase& bot) {
 				}
 			}
 		}
-		std::cout << smalllocal[0][0];
 		closed[smalllocal[0][0]][smalllocal[0][1]] = true;
 		//cross
 		if (gLevel.isValid(smalllocal[0][0], smalllocal[0][1] + 1) == true) 
@@ -107,15 +108,17 @@ void cDijkstra::build(cBotBase& bot) {
 	int nextclosedy = gTarget.PositionY();
 	int hello = 0;
 	while (!done) {
-		InPath[nextclosedx][nextclosedy] = true;
-		int tx = nextclosedx;
-		int ty = nextclosedy;
-		nextclosedx = linkX[tx][ty];
-		nextclosedy = linkY[tx][ty];
-		std::cout << nextclosedx;
-			std::cout << "    \n";
-		if ((nextclosedx == bot.PositionX()) && (nextclosedy == bot.PositionY())) done = true;
+			InPath[nextclosedx][nextclosedy] = true;
+			coordslist[0].push_back(nextclosedx);
+			coordslist[1].push_back(nextclosedy);
+				int tx = nextclosedx;
+				int ty = nextclosedy;
+				nextclosedx = linkX[tx][ty];
+				nextclosedy = linkY[tx][ty];
+				if ((nextclosedx == bot.PositionX()) && (nextclosedy == bot.PositionY()))
+					done = true;
 	}
 	completed = true;
 }
+
 cDijkstra gDijkstra;

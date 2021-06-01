@@ -1,15 +1,2 @@
-﻿  botRandom.cpp
-  botSimple.cpp
-  dijkstra.cpp
-C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\dijkstra.cpp(27,13): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\dijkstra.cpp(29,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  dynamic.cpp
-C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\dynamic.cpp(45,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\dynamic.cpp(46,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\dynamic.cpp(55,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\dynamic.cpp(56,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\dynamic.cpp(78,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  level.cpp
-  main.cpp
-  Generating Code...
-  PathFinderCpp.vcxproj -> C:\Users\Tom\Desktop\Gits\ai assigmentents\PathFinderCppTomC\Debug\PathFinderCpp.exe
+﻿  botSimple.cpp
+  PathFinderCpp.vcxproj -> C:\Users\Tom\uol Lincoln\OneDrive - University of Lincoln\Desktop\Gits\ai-ass-2\PathFinderCppTomC\Debug\PathFinderCpp.exe

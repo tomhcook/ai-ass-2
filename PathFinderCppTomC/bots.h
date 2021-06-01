@@ -5,9 +5,13 @@
 //
 //(c) Patrick Dickinson, University of Lincoln, School of Computer Science, 2020
 //======================================================================================
-
+#include <list>
+#include <iterator>
 #include "botbase.h"
-
+struct coords {
+	int x;
+	int y;
+};
 class cBotRandom : public cBotBase
 {
 	virtual void ChooseNextGridPosition();
@@ -15,7 +19,7 @@ class cBotRandom : public cBotBase
 class cbotSimple : public cBotBase {
 	virtual void ChooseNextGridPosition();
 };
-class cDijkstra{
+class cDijkstra {
 public:
 	bool closed[GRIDWIDTH][GRIDHEIGHT]; 
 	//whether or not location is closed
@@ -29,9 +33,11 @@ public:
 	bool completed;
 	cDijkstra(){ completed = false; };
 	virtual void build(cBotBase& bot);
+	std::list<int> coordslist [2];
 
 };
 extern cDijkstra gDijkstra;
+
 
 
 

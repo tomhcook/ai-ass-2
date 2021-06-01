@@ -1,16 +1,23 @@
 #include "bots.h"
+#include <iostream>
+#include <vector>
 void cbotSimple::ChooseNextGridPosition() {
+	gDijkstra.coordslist[0].reverse();
+	gDijkstra.coordslist[1].reverse();
+	int len = gDijkstra.coordslist[0].size();
+	std::vector<int> xcoords(gDijkstra.coordslist[0].begin(), gDijkstra.coordslist[0].end());
+	std::vector<int> Ycoords(gDijkstra.coordslist[1].begin(), gDijkstra.coordslist[1].end());
+	bool done = false;
+	//Use while loop, as randomly selected location might not be valid
+	while (!done) {
+	for (unsigned int i = 0; i < xcoords.size(); i++) {
+		std::cout << xcoords[i] << " : " << Ycoords[i] << std::endl;
+		SetNext(xcoords[i], Ycoords[i], gLevel);
 
-	
-		if (PositionX() > gTarget.PositionX()) {
-			SetNext((PositionX() - 1), (PositionY()), gLevel);
-		}
-		else if (PositionX() < gTarget.PositionX()) SetNext((PositionX() + 1), (PositionY()), gLevel);
-
-	
-		if (PositionY() > gTarget.PositionY()) {
-			SetNext((PositionX()), (PositionY()-1), gLevel);
-		}
-		else if (PositionY() < gTarget.PositionY()) SetNext((PositionX()), (PositionY()+1), gLevel);
-
+	}
+	done = true;
+}
+	/*for (auto& it : xcoords) {
+		std::cout << it << std::endl;
+	}*/
 }
