@@ -108,15 +108,21 @@ void cDijkstra::build(cBotBase& bot) {
 	int nextclosedy = gTarget.PositionY();
 	int hello = 0;
 	while (!done) {
+		if (nextclosedx >= 0 && nextclosedx <= 40 && nextclosedy >= 0 && nextclosedy <= 40){
 			InPath[nextclosedx][nextclosedy] = true;
 			coordslist[0].push_back(nextclosedx);
 			coordslist[1].push_back(nextclosedy);
+		}
+		if (nextclosedx >= 0 && nextclosedx <= 40 && nextclosedy >= 0 && nextclosedy <= 40) {
 				int tx = nextclosedx;
 				int ty = nextclosedy;
 				nextclosedx = linkX[tx][ty];
 				nextclosedy = linkY[tx][ty];
-				if ((nextclosedx == bot.PositionX()) && (nextclosedy == bot.PositionY()))
-					done = true;
+		}
+		if ((nextclosedx == bot.PositionX()) && (nextclosedy == bot.PositionY()))done = true;
+
+
+
 	}
 	completed = true;
 }

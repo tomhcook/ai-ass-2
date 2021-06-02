@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
     //======================================================================================
     //Load the map and set target position
     //======================================================================================
-    gLevel.Load("maps/1.txt");
+    gLevel.Load("maps/2.txt");
     gTarget.SetCurrent(30, 20, gLevel);
 
     //======================================================================================
@@ -125,7 +125,7 @@ int main(int argc, char* argv[])
         if ((offsetX != 0) || (offsetY != 0))
         {
             gTarget.SetNext((gTarget.PositionX() + offsetX), (gTarget.PositionY() + offsetY), gLevel);
-            gDijkstra.build(*pBot);
+
         }
 
         //======================================================================================
@@ -145,6 +145,7 @@ int main(int argc, char* argv[])
         //======================================================================================
         //Update moving objects
         //======================================================================================
+        gDijkstra.build(*pBot);
         gTarget.Update(deltaTimeMS);
         pBot->Update(deltaTimeMS);
 

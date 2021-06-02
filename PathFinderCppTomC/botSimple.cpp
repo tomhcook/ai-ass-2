@@ -8,16 +8,8 @@ void cbotSimple::ChooseNextGridPosition() {
 	std::vector<int> xcoords(gDijkstra.coordslist[0].begin(), gDijkstra.coordslist[0].end());
 	std::vector<int> Ycoords(gDijkstra.coordslist[1].begin(), gDijkstra.coordslist[1].end());
 	bool done = false;
-	//Use while loop, as randomly selected location might not be valid
-	while (!done) {
 	for (unsigned int i = 0; i < xcoords.size(); i++) {
 		std::cout << xcoords[i] << " : " << Ycoords[i] << std::endl;
 		SetNext(xcoords[i], Ycoords[i], gLevel);
-
 	}
-	done = true;
-}
-	/*for (auto& it : xcoords) {
-		std::cout << it << std::endl;
-	}*/
 }
