@@ -146,6 +146,10 @@ int main(int argc, char* argv[])
         //Update moving objects
         //======================================================================================
         gDijkstra.build(*pBot);
+        gAStartman.build(*pBot);
+        gAStartdiag.build(*pBot);
+        gAStartecu.build(*pBot);
+        gAStartecu2.build(*pBot);
         gTarget.Update(deltaTimeMS);
         pBot->Update(deltaTimeMS);
 

@@ -19,6 +19,21 @@ class cBotRandom : public cBotBase
 class cbotSimple : public cBotBase {
 	virtual void ChooseNextGridPosition();
 };
+class cDijkstrabot : public cBotBase {
+	virtual void ChooseNextGridPosition();
+};
+class cAstarbotman: public cBotBase {
+	virtual void ChooseNextGridPosition();
+};
+class cAstarbotdiag: public cBotBase {
+	virtual void ChooseNextGridPosition();
+};
+class cAstarbotecu: public cBotBase {
+	virtual void ChooseNextGridPosition();
+};
+class cAstarbotecu2: public cBotBase {
+	virtual void ChooseNextGridPosition();
+};
 class cDijkstra {
 public:
 	bool closed[GRIDWIDTH][GRIDHEIGHT]; 
@@ -37,6 +52,24 @@ public:
 
 };
 extern cDijkstra gDijkstra;
+class cAStartman : public cDijkstra {
+public: virtual void build(cBotBase& bot);
+};
+
+class cAStartdiag : public cDijkstra {
+public: virtual void build(cBotBase& bot);
+};
+class cAStartecu : public cDijkstra {
+public: virtual void build(cBotBase& bot);
+};
+class cAStartecu2 : public cDijkstra {
+public: virtual void build(cBotBase& bot);
+};
+extern cAStartman gAStartman;
+extern cAStartdiag gAStartdiag;
+extern cAStartecu gAStartecu;
+extern cAStartecu2 gAStartecu2;
+
 
 
 
